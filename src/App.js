@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Home from "./components/Home.jsx";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import "./App.css";
@@ -33,6 +34,7 @@ function App() {
             )}
           </button>
         </header>
+        <Home />
       </main>
     </div>
   );
