@@ -12,8 +12,13 @@ export default function Home() {
         />
       </div>
       <div>
-        <select class="p-[15px] w-full bg-neutral-300 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
-          <option selected>Filter by Region</option>
+        <select
+          defaultVaslue="filter"
+          class="p-[15px] w-full bg-neutral-300 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
+        >
+          <option value="filter" selected>
+            Filter by Region
+          </option>
           <option value="africa">Africa</option>
           <option value="america">America</option>
           <option value="asia">Asia</option>
