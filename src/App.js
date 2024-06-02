@@ -14,8 +14,8 @@ function App() {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <main className="flex min-h-screen flex-col bg-neutral-200 dark:bg-neutral-900">
-        <header className="w-screen p-[25px] flex justify-between shadow-xl">
+      <main className="flex max-w-screen-2xl flex-col bg-neutral-200 dark:bg-neutral-900">
+        <header className="p-[25px] flex justify-between shadow-xl">
           <h1 className="text-neutral-900 dark:text-neutral-200 text-4xl">
             Where in the world?
           </h1>
