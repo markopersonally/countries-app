@@ -2,7 +2,7 @@ import { CiSearch } from "react-icons/ci";
 
 export default function Home() {
   return (
-    <form className="mx-[50px] p-[25px] flex justify-between  dark:text-neutral-100">
+    <form className="mx-[50px] p-[25px] flex justify-between flex-wrap gap-4 dark:text-neutral-100">
       <div className="p-[15px] flex items-center gap-2 bg-neutral-300 dark:bg-neutral-700 text-xl">
         <CiSearch className="text-2xl text-neutral-900 dark:text-neutral-100" />
         <input
