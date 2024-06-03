@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
-export default function Item() {
+export default function Item({ searchQuery, selectedRegion }) {
   const [countries, setCountries] = useState([]);
   const [visibleCount, setVisibleCount] = useState(20);
   const [isLoading, setIsLoading] = useState(true);
@@ -22,6 +22,16 @@ export default function Item() {
     setVisibleCount((prevCount) => prevCount + 20);
   };
 
+  const filteredCountries = countries.filter((country) => {
+    const matchesSearchQuery = country.name.common
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    const matchesRegion = selectedRegion
+      ? country.region === selectedRegion
+      : true;
+    return matchesSearchQuery && matchesRegion;
+  });
+
   return (
     <>
       {isLoading ? (
@@ -29,7 +39,7 @@ export default function Item() {
       ) : (
         <div className="my-[50px] max-w-screen-2xl text-neutral-900 bg-neutral-200 dark:bg-neutral-900 dark:text-neutral-200">
           <div className="flex flex-wrap items-center justify-center gap-10 text-xs">
-            {countries.slice(0, visibleCount).map((country, index) => (
+            {filteredCountries.slice(0, visibleCount).map((country, index) => (
               <div
                 key={index}
                 className="h-[250px] w-[250px] p-5 flex flex-col gap-3 mb-4 shadow-2xl text-neutral-900 bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-200"
@@ -50,10 +60,10 @@ export default function Item() {
               </div>
             ))}
           </div>
-          {visibleCount < countries.length && (
+          {visibleCount < filteredCountries.length && (
             <button
               onClick={loadMore}
-              className="w-[200px] p-4 bg-blue-500 text-white rounded hover:bg-blue-800 "
+              className="w-[200px] mt-10 p-4 bg-blue-500 text-white rounded hover:bg-blue-800 "
             >
               Load More..
             </button>
