@@ -33,7 +33,7 @@ export default function Home() {
             onChange={handleRegionChange}
             className="p-[15px] w-full bg-neutral-300 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
           >
-            <option value="">Filter by Region</option>
+            <option value="">All Region</option>
             <option value="Africa">Africa</option>
             <option value="Americas">Americas</option>
             <option value="Asia">Asia</option>

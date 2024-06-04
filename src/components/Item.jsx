@@ -5,9 +5,10 @@ export default function Item({ searchQuery, selectedRegion }) {
   const [countries, setCountries] = useState([]);
   const [visibleCount, setVisibleCount] = useState(20);
   const [isLoading, setIsLoading] = useState(true);
+  const URL = "https://restcountries.com/v3.1/all";
 
   const fetchData = () => {
-    Axios.get("https://restcountries.com/v3.1/all").then((res) => {
+    Axios.get(URL).then((res) => {
       setCountries(res.data);
       setIsLoading(false);
     });
@@ -42,7 +43,7 @@ export default function Item({ searchQuery, selectedRegion }) {
             {filteredCountries.slice(0, visibleCount).map((country, index) => (
               <div
                 key={index}
-                className="h-[250px] w-[250px] p-5 flex flex-col gap-3 mb-4 shadow-2xl text-neutral-900 bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-200"
+                className="h-[250px] w-[250px] p-5 flex flex-col gap-3 mb-4 shadow-2xl text-neutral-900 bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-200 hover:cursor-pointer"
               >
                 <img
                   className="h-2/3"
