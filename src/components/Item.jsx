@@ -23,11 +23,15 @@ export default function Item({ searchQuery, selectedRegion }) {
 
   return (
     <div className="my-[50px] max-w-screen-2xl text-neutral-900 bg-neutral-200 dark:bg-neutral-900 dark:text-neutral-200">
-      {isLoading && !error && <p className="text-center text-2xl text-red-500">Loading...</p>}
-      {error && !isLoading && <p className="text-center text-2xl text-red-500">{error}</p>}
+      {isLoading && !error && (
+        <p className="text-center text-2xl text-red-500">Loading...</p>
+      )}
+      {error && !isLoading && (
+        <p className="text-center text-2xl text-red-500">{error}</p>
+      )}
       <div className="flex flex-wrap items-center justify-center gap-10 text-xs">
         {filteredCountries.slice(0, visibleCount).map((country, index) => (
-          <Link key={index} to={`/country/${country.name.common}`}>
+          <Link key={index} to={`country/${country.name.common}`}>
             <div className="h-[250px] w-[250px] p-5 flex flex-col gap-3 mb-4 shadow-2xl text-neutral-900 bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-200 hover:cursor-pointer">
               <img
                 className="h-2/3"

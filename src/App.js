@@ -13,11 +13,11 @@ function App() {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <main className="flex max-w-screen-2xl flex-col bg-neutral-200 dark:bg-neutral-900">
+      <main className="m-auto flex max-w-screen-2xl flex-col bg-neutral-200 dark:bg-neutral-900">
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/country/:countryName" element={<ItemPage />} />
+          <Route path="/countries-app" element={<Home />} />
+          <Route path="/countries-app/country/:countryName" element={<ItemPage />} />
         </Routes>
       </main>
     </div>
