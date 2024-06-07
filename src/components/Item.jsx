@@ -38,7 +38,7 @@ export default function Item({ searchQuery, selectedRegion }) {
                 src={country.flags.png}
                 alt={`${country.name.common} flag`}
               />
-              <div className="h-1/3 flex flex-col">
+              <div className="h-1/3 font-bold flex flex-col">
                 <h3>{country.name.common}</h3>
                 <h4>Population: {country.population.toLocaleString()}</h4>
                 <h4>Region: {country.region}</h4>
